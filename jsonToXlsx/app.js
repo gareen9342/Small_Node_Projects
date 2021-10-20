@@ -33,12 +33,12 @@ function send_aoa_to_client(req, res, data, bookType) {
     res.status(200).send(buf);
 }
 // 이걸 사용하려면 CURL 요청 보내기
-
 function saveFile(data){
     const workbook = xlsx.utils.book_new();
     const worksheet = xlsx.utils.json_to_sheet(data);
     xlsx.utils.book_append_sheet(workbook, worksheet, 'new Sheet');
     xlsx.writeFile(workbook, 'output.xlsx');
+    // Node에서는 res.download로 해당 파일을 내려줄 수 있다.
 }
 
 saveFile(imsiData);
