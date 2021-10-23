@@ -10,10 +10,10 @@ const xlsx = require("xlsx");
 const workbook = xlsx.utils.book_new();
 
 const imsiData = [
-    { name : "AA", age: 22 },
-    { name : "BB", age: 33 },
-    { name : "CC", age: 44 },
-    { name : "DD", age: 55 },
+    { name : "AA", age: 22, nickname:"aa's nickname" },
+    { name : "BB", age: 33, nickname:"bb's nickname" },
+    { name : "CC", age: 44, nickname:"cc's nickname" },
+    { name : "DD", age: 55, nickname:"dd's nickname" },
 ];
 
 
