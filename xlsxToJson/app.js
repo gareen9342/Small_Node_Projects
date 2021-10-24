@@ -19,7 +19,16 @@ const getJsonArray = async () => {
         const firstSheet = workBook.Sheets[workBook.SheetNames[0]]
         const jsonArray = await xlsx.utils.sheet_to_json(firstSheet) // json array로 받을 수 있는 방법
 
-        console.log(jsonArray)
+        // 해당 json array를 이용하여 다량의 프로미스 함수를 연쇄적으로 실행하게 될 경우에
+        // 만약 row 수가 천개라면 엄청난 양의 데이터를 프로미스 함수로 한 줄 씩 읽게 되어 오래걸림
+        // Promise.all로 해당 함수를 병렬적으로 처리해야할 필요가 있다.
+        await Promise.all(jsonArray.map(async(jsonData) => {
+            await new Promise((result, reject) => {
+                setTimeout(() => {
+                    return "true"
+                },100)
+            })
+        }))
     }catch(err){
         console.error(err)
     }
@@ -39,8 +48,6 @@ const getStream = async() => {
                     continue
                 }
                 console.log(chunk)
-
-
             }
         }
 
