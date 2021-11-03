@@ -12,8 +12,7 @@ app.get('/', function (req, res) {
 
 app.post("/xlsx", (req, res) => {
 //https://www.zerocho.com/category/NodeJS/post/60778f07cf47fe0004727b12
-    res
-        .header("content-disposition","asdf.xlsx").download("./output.xlsx")
+    res.download("./output.xlsx")
 })
 
 app.listen(4000)

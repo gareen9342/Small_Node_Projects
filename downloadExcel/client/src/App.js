@@ -8,6 +8,7 @@ function App() {
             const response = await axios.post("http://localhost:4000/xlsx",{},{
                 responseType: 'blob'
             })
+            console.log(response)
 
             FileDownload(response.data, "output.xlsx")
             // console.log(response.data)
