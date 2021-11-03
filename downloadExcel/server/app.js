@@ -12,8 +12,8 @@ app.get('/', function (req, res) {
 
 app.post("/xlsx", (req, res) => {
 
-
-    res.json({"asa":"asdf"})
+    res
+        .header("content-disposition","asdf.xlsx").download("./output.xlsx")
 })
 
 app.listen(4000)
