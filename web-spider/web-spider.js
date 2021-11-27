@@ -4,6 +4,7 @@ const superagent = require("superagent")
 const mkdirp = require("mkdirp")
 const {urlToFilename } = "./utils.js"
 
+
 module.exports = function spider(url, cb) {
     const filename = urlToFilename(url)
     console.log(filename)
@@ -13,22 +14,20 @@ module.exports = function spider(url, cb) {
             console.log(`Downloading ${url} into ${filename}`)
             superagent.get(url).end((err, res) => {
                 if(err){
-                    cb(err)
-                }else{
-                    mkdirp(path.dirname(filename), err => {
+                    return cb(err)
+                }
+                mkdirp(path.dirname(filename), err => {
+                    if(err){
+                        return cb(err)
+                    }
+                    fs.writeFile(filename, res.text, err => {
                         if(err){
                             cb(err)
                         }else{
-                            fs.writeFile(filename, res.text, err => {
-                                if(err){
-                                    cb(err)
-                                }else{
-                                    cb(null, filename, true)
-                                }
-                            })
+                            cb(null, filename, true)
                         }
                     })
-                }
+                })
             })
             // end superagent
         }// end if err
