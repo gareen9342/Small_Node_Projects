@@ -1,0 +1,16 @@
+{
+  "name": "web-spider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node web-spider.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mkdirp": "^1.0.4",
+    "superagent": "^6.1.0"
+  }
+}
