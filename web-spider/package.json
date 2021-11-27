@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node web-spider-cli.js"
+    "start": "node web-spider-cli.js https://www.10000recipe.com/ 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
     "mkdirp": "^1.0.4",
+    "slug": "^5.1.0",
     "superagent": "^6.1.0"
   }
 }
