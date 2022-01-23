@@ -1,73 +1,55 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+## start
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+cli 를 이용해서 설치하게 되면 src/ 하단에 보일러플레이트 코드들이 생긴다.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+core file들도 생기는데, 하단의 몇 가지 코어파일
 
-## Description
+- app.controller.ts : 싱글 라우트의 기본 컨트롤러    
+- app.controller.spec.ts : unit tests    
+- app.module.ts: 어플리케이션의 루트 모듈     
+- app.service.ts: 싱글 메소드의 기본 서비스    
+- main.ts: entry file    
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Nest application instance를 만들기 위해, NestFactory  class를 이용해야 함.
+해당 클래스는 몇 가직 스태틱 메서드를 보내줌.
 
-## Installation
+create()가 어플리케이션 객체를 리턴해줌,.. 
 
-```bash
-$ npm install
-```
 
-## Running the app
+### 라이브 서버 
+`npm run start:dev`
 
-```bash
-# development
-$ npm run start
+## Controller
 
-# watch mode
-$ npm run start:dev
 
-# production mode
-$ npm run start:prod
-```
+https://docs.nestjs.com/controllers
 
-## Test
 
-```bash
-# unit tests
-$ npm run test
+- `@Request(), @Req()`: req
+- `@Response(). @Res()`: res
+- `@Next`
+- `@Session()`
+- `@Param(key?: string`
+- `@Body(key?: string )` : requestbody -> **_req.body_**
+- `@Query(key? : string`:req.query
+- `@Headers(name?:string)`
+- `@Ip()`: req.ip
+...
 
-# e2e tests
-$ npm run test:e2e
+## Service
 
-# test coverage
-$ npm run test:cov
-```
+내부의 Injectable은 디펜던시 인젝션이 가능하다는 뜻
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## Todos
 
-## Stay in touch
+- [] Logging
+- [] Sequelize functions
+- [] Sql 
+- [] directory 
+- [] error control
+- [] Authenticate
+- [] View engine
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
-## License
 
-Nest is [MIT licensed](LICENSE).
