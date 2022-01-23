@@ -41,15 +41,13 @@ https://docs.nestjs.com/controllers
 내부의 Injectable은 디펜던시 인젝션이 가능하다는 뜻
 
 
-## Todos
+## Todos  ✓
 
-- [] Logging
-- [] Sequelize functions
-- [] Sql 
-- [] directory 
-- [] error control
-- [] Authenticate
-- [] View engine
-
-
+- [ ] Logging
+- [ ] Sequelize functions
+- [ ] Sql 
+- [ ] directory 
+- [ ] error control
+- [ ] Authenticate
+- [ ] View engine
 
