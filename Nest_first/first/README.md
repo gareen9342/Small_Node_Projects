@@ -51,3 +51,9 @@ https://docs.nestjs.com/controllers
 - [ ] Authenticate
 - [ ] View engine
 
+## Providers
+
+services, repositories, factories helpers...들을 providerfkrh qnfmsek. 
+
+클래스 간의 다양한 관계를 규정하게 해준다. 
+
