@@ -20,7 +20,6 @@ import {AppLogginService} from "./logger/LoggerService";
     UsersModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
-  exports: new AppLogginService()
+  providers: [AppService]
 })
 export class AppModule {}
