@@ -1,3 +1,6 @@
+class exception extends Error{}
+
+
 export const levelSubscribe = (db) => {
     db.subscribe = (pattern, listener) =>{
         db.on("put", (key, val) => {
